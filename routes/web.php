@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $dati = config("data");
-    return view('home', $dati);
-})->name("home");
+use App\Http\Controllers\PageController;
+
+Route::get('/', [PageController::class, 'index'])->name("home");
